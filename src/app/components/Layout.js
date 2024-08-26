@@ -13,7 +13,7 @@ export default function Layout() {
         <Sidebar />
       </div>
 
-      <div className="flex flex-grow flex-col md:flex-row">
+      <div className="flex flex-grow flex-col mt-[-100px] md:flex-row">
         <div className="w-full md:w-1/3 p-4 md:p-10">
           <TodoList onSelectTodo={setSelectedTodo} />
         </div>
