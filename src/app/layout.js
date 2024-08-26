@@ -1,5 +1,5 @@
 import { Inter,Nunito } from "next/font/google";
-
+import './global.css'
 
 const inter = Nunito({ subsets: ["latin"] });
 
