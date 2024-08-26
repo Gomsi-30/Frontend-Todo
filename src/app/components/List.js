@@ -76,11 +76,7 @@ export default function TodoList({ onSelectTodo }) {
         <button onClick={toggleForm} className='w-full md:w-[170px] px-3 py-2 md:px-6 md:py-1 bg-black text-white text-xl md:text-1xl rounded-lg'>
           {showForm ? 'Cancel' : 'Todo'}
         </button>
-        <input
-          type="text"
-          placeholder="Search..."
-          className="w-full p-2 border border-gray-300 rounded mt-2 md:mt-0"
-        />
+       
       </div>
       
       {/* Form */}
