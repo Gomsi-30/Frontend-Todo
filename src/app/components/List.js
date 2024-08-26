@@ -52,7 +52,7 @@ export default function TodoList({ onSelectTodo }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await fetch('http://localhost:3001/add', {
+      await fetch('https://backend-todo-three.vercel.app/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
