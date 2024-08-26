@@ -72,20 +72,18 @@ export default function TodoList({ onSelectTodo }) {
 
   return (
     <div>
-      <div className='w-full ml-5 flex flex-row gap-[200px]'>
-        <button
-          onClick={toggleForm}
-          className='w-[170px] px-8 py-3 bg-black text-white text-2xl rounded-lg'
-        >
+      <div className='w-full ml-5 flex flex-col md:flex-row md:gap-[200px]'>
+        <button onClick={toggleForm} className='w-full md:w-[170px] px-4 py-2 md:px-8 md:py-3 bg-black text-white text-xl md:text-2xl rounded-lg'>
           {showForm ? 'Cancel' : 'Todo'}
         </button>
         <input
           type="text"
           placeholder="Search..."
-          className="w-full p-2 border border-gray-300 rounded"
+          className="w-full p-2 border border-gray-300 rounded mt-2 md:mt-0"
         />
       </div>
       
+      {/* Form */}
       {showForm && (
         <form onSubmit={handleSubmit} className="mt-4 p-4 border rounded">
           <h2 className="text-lg font-bold mb-2">Create New Todo</h2>
@@ -106,44 +104,31 @@ export default function TodoList({ onSelectTodo }) {
             className="w-full p-2 border border-gray-300 rounded mb-2"
             required
           />
-         
-          <button
-            type="submit"
-            className="px-4 py-2 bg-black text-white rounded"
-          >
+          <button type="submit" className="px-4 py-2 bg-black text-white rounded">
             Add Todo
           </button>
         </form>
       )}
-      
+
+      {/* Todo Items */}
       {loading ? (
         <p className="text-center my-4">Loading...</p>
       ) : (
         todos.map((todo) => (
-          <div
-            key={todo.id}
-            onClick={() => onSelectTodo(todo)}
-            className="p-4 m-5 w-full border-2 hover:bg-gray-100 cursor-pointer"
-          >
+          <div key={todo.id} onClick={() => onSelectTodo(todo)} className="p-4 m-5 w-full border-2 hover:bg-gray-100 cursor-pointer">
             <h2 className="font-bold text-lg">{todo.title}</h2>
             <p className="text-gray-500">{todo.description}</p>
             <p className="text-gray-400 text-sm">Created: {new Date(todo.createdAt).toLocaleString()}</p>
           </div>
         ))
       )}
-      
+
+      {/* Pagination */}
       <div className="flex justify-between mt-4 ml-5">
-        <button 
-          onClick={handlePreviousPage} 
-          disabled={page === 1}
-          className="px-4 py-2 bg-black text-white rounded disabled:opacity-50"
-        >
+        <button onClick={handlePreviousPage} disabled={page === 1} className="px-4 py-2 bg-black text-white rounded disabled:opacity-50">
           Previous
         </button>
-        <button 
-          onClick={handleNextPage} 
-          className="px-4 py-2 bg-black text-white rounded"
-        >
+        <button onClick={handleNextPage} className="px-4 py-2 bg-black text-white rounded">
           Next
         </button>
       </div>
