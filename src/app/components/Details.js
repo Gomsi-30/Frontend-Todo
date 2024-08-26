@@ -64,8 +64,8 @@ export default function TodoDetails({ todo, onDeleteTodo, onUpdateTodo }) {
 
   return (
     <div className="border-2 p-5 w-full h-[500px]">
-    <div className='border-b bg-black p-5'>
-      <h1 className='text-lg md:text-2xl text-bold text-white'>Todo Details</h1>
+    <div className='border-b bg-black p-3'>
+      <h1 className='text-md md:text-1xl text-bold text-white'>Todo Details</h1>
     </div>
     <div className="flex flex-col mt-4">
       {/* Buttons */}

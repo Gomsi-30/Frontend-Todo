@@ -73,7 +73,7 @@ export default function TodoList({ onSelectTodo }) {
   return (
     <div>
       <div className='w-full ml-5 flex flex-col md:flex-row md:gap-[200px]'>
-        <button onClick={toggleForm} className='w-full md:w-[170px] px-4 py-2 md:px-8 md:py-3 bg-black text-white text-xl md:text-2xl rounded-lg'>
+        <button onClick={toggleForm} className='w-full md:w-[170px] px-3 py-2 md:px-6 md:py-1 bg-black text-white text-xl md:text-1xl rounded-lg'>
           {showForm ? 'Cancel' : 'Todo'}
         </button>
         <input
@@ -115,7 +115,7 @@ export default function TodoList({ onSelectTodo }) {
         <p className="text-center my-4">Loading...</p>
       ) : (
         todos.map((todo) => (
-          <div key={todo.id} onClick={() => onSelectTodo(todo)} className="p-4 m-5 w-full h-[80px] border-2 hover:bg-gray-100 cursor-pointer">
+          <div key={todo.id} onClick={() => onSelectTodo(todo)} className="p-4 m-5 w-full h-[84px] border-2 hover:bg-gray-100 cursor-pointer">
             <h2 className="font-bold text-md">{todo.title}</h2>
             <p className="text-gray-500 text-sm">{todo.description}</p>
             <p className="text-gray-400 text-sm">Created: {new Date(todo.createdAt).toLocaleString()}</p>
