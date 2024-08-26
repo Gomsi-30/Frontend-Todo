@@ -115,9 +115,9 @@ export default function TodoList({ onSelectTodo }) {
         <p className="text-center my-4">Loading...</p>
       ) : (
         todos.map((todo) => (
-          <div key={todo.id} onClick={() => onSelectTodo(todo)} className="p-4 m-5 w-full h-[60px] border-2 hover:bg-gray-100 cursor-pointer">
-            <h2 className="font-bold text-lg">{todo.title}</h2>
-            <p className="text-gray-500">{todo.description}</p>
+          <div key={todo.id} onClick={() => onSelectTodo(todo)} className="p-4 m-5 w-full h-[75px] border-2 hover:bg-gray-100 cursor-pointer">
+            <h2 className="font-bold text-md">{todo.title}</h2>
+            <p className="text-gray-500 text-sm">{todo.description}</p>
             <p className="text-gray-400 text-sm">Created: {new Date(todo.createdAt).toLocaleString()}</p>
           </div>
         ))
